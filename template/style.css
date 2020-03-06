@@ -1,0 +1,151 @@
+a{
+    text-decoration: none !important;
+}
+
+input:focus , button:focus , textarea:focus , select:focus{
+    outline:0;
+}
+
+.bang_list input , .bang_list select{
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    padding:3px 10px;
+}
+
+.ml10{margin-left:10px;}
+
+.a_to_but{
+    padding: 3px 5px;
+}
+
+.redbtn {
+    background: #ea0000;
+    border: 1px solid #f65802;
+    color: #fff !important;
+    border-radius: 5px;
+}
+
+.redbtn:hover {
+    background: #de0000;
+    color: #fff;
+    cursor: pointer;
+}
+.bluebut {
+    background: #46A3FF;
+    border: 1px solid #3e99f4;
+    color: #fff !important;
+    border-radius: 5px;
+}
+
+.bluebut:hover {
+    background: #2182e3;
+    cursor: pointer;
+}
+
+.graybut {
+    background: #f3f3f3;
+    border: #cfcfcf 1px solid;
+    color: #999;
+    border-radius: 5px;
+}
+
+.graybut:hover {
+    background: #bbb;
+    color: #fffeee;
+    cursor: pointer;
+}
+
+.txt_orage{
+    color: orange !important;
+}
+.txt_red{
+    color: red !important;
+}
+.txt_green{
+    color: #54ff46 !important;
+}
+.txt_black{
+    color: #333 !important;
+}
+
+/*列表*/
+
+.bg_gray{
+    background: #e0e0e0;
+    color: #333;
+    font-size: 14px;
+}
+
+.art-list {
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+}
+.art-list li {
+    height: auto;
+    display: block;
+    overflow: hidden;
+	width:710px;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+.art-list .lpic {
+    float: left;
+    width: 200px;
+    /*height: 169px;*/
+    padding-right: 20px;
+    position: relative;
+    border-bottom: dashed 1px #e5e5e5;
+}
+.art-list dl {
+    float: left;
+    width: 490px;
+    /*height: 169px;*/
+    position: relative;
+    border-bottom: dashed 1px #e5e5e5;
+}
+.art-list dt {
+    width: 100%;
+    height: 26px;
+    overflow: hidden;
+    font-size: 20px;
+    font-weight: bold;
+}
+.art-list dt a:hover{
+	color:#0077dd;text-decoration:none;
+}
+.art-list .des {
+    color: #989898;
+    margin: 15px 0;
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    line-height: 22px;
+    overflow: hidden;
+    /*height: 75px;*/
+}
+.art-list .info {
+    color: #989898;
+    width: 100%;
+    height: 19px;
+    overflow: hidden;
+    bottom: 16px;
+    left: 0px;
+}
+.art-list .info span {
+    height: 19px;
+    float: left;
+}
+.art-list .info .channel a {
+    color: #0077dd;
+}
+
+
+
+.ajax_window_box{padding:20px 30px 30px 30px;max-width: 600px;}
+.ajax_window_box input ,
+.ajax_window_box select,
+.ajax_window_box textarea{padding:3px 8px;border-radius:5px;margin-right:10px;font-size:14px;border: 1px solid #e0e0e0;}
+.ajax_window_box select{height:35px;}
+.ajax_window_box p{margin:10px 0;}
+.ajax_window_box hr{height:1px;border:none;border-top:1px solid #e0e0e0;}

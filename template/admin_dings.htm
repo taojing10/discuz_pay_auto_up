@@ -1,0 +1,55 @@
+<form method="post" action="">
+  <table class="tb">
+    <tbody>
+      <tr class="hover">
+        <td width="40">用户名</td>
+        <td width="100"><input type="text" name="username" value="{$username}" class="txt"></td>
+        <td><input type="submit" name="srchbtn" class="btn" value="搜索"></td>
+      </tr>
+    </tbody>
+  </table>
+</form>
+
+<table class="dt mtm">
+	<tbody>
+		<tr>
+			<th>帖子标题</th>
+			<th width="60px">顶帖费用</th>
+			<th width="60px">顶帖时长</th>
+			<th width="130px">到期时间</th>
+			<th width="130px">顶帖时间</th>
+			<th width="70px">作者</th>
+			<th width="50">操作</th>
+		</tr>
+		<!--{loop $dtList $dt}-->
+		<tr id="data_{$dt['did']}">
+			<td>
+				<a href="forum.php?mod=viewthread&tid={$dt['tid']}" target="_blank">{$dt['subject']}</a>
+			</td>
+			<td>{$dt['pay']}</td>
+			<td>{$dt['number']}小时</td>
+			<td>{eval echo dgmdate($dt['expire'])}</td>
+			<td>{eval echo dgmdate($dt['dateline'])}</td>
+			<td><a href="home.php?mod=space&uid={$dt['uid']}" target="_blank">{$dt['username']}</a></td>
+			<td>
+				<a href="javascript:;'" onclick="dtD('{$dt['did']}');">删除</a>
+			</td>
+		</tr>
+		<!--{/loop}-->
+	</tbody>
+</table>
+<!--{if $multipage}-->
+<div class="mtw">
+	{$multipage}
+</div>
+<!--{/if}-->
+
+<script type="text/javascript">
+    function dtD(did) {
+		if (confirm("确认操作嘛")) {
+			var url = '{$mpurl}&formhash={FORMHASH}&act=dtdel&dt=' + did;
+			ajaxget(url , 'data_' + did , 'data_' + did , 'data_' + did );
+		}
+    }
+
+</script>

@@ -1,0 +1,62 @@
+<!--{template common/header_ajax}-->
+
+<script type="text/javascript">
+	function dtMoney( time ){
+		var userExtcredit = {$userCredit};
+		var sumbitBut = document.getElementById('jjSubmit');
+
+		var Money = time * {$pvars['price']};
+
+		if(Money > userExtcredit){
+			sumbitBut.className = 'bluebut';
+			sumbitBut.value = '点击充值';
+            sumbitBut.setAttribute('onclick' , 'window.open(\'{$pvars['recharge_url']}\');return false;');
+		}else{
+			sumbitBut.className = 'redbtn';
+			sumbitBut.value = '完成顶帖';
+			sumbitBut.disabled = false;
+            sumbitBut.setAttribute('onclick' , 'dtgo()');
+		}
+	}
+
+	function dtgo(){
+		var url = 'plugin.php?id={$ident}:ajax&formhash={FORMHASH}&act=dt&thread={$tid}&dtgo=1';
+		var dtTime = $('dtTime').value;
+
+			url += '&dttime=' + dtTime;
+
+		ajaxget(url, 'ajaxwaitid', 'ajaxwaitid');
+
+		return false;
+	}
+</script>
+
+<div class="ajax_window_box">
+	<p>
+		顶帖费用：{$pvars['price']}{$creditName}/每小时
+	</p>
+	<p>
+		顶帖时长：
+		<select id="dtTime" onchange="dtMoney(this.value);">
+			<!--{loop $timelength_options $option}-->
+			<option value="{$option}">{$option} 小时</option>
+			<!--{/loop}-->
+		</select>
+	</p>
+
+	<hr>
+	<p>
+		现有{$creditName}：{$userCredit}
+	</p>
+	<hr>
+	<p class="buy_money_cont rq">
+	   {$pvars['describe']}
+	</p>
+
+	<hr>
+	<p>
+		<input type="submit" class="redbtn" id="jjSubmit" onclick="dtgo()" value="完成顶帖">
+		<input type="button" class="graybut" value="取消顶帖" onclick="hideWindow('dtWin');">
+	</p>
+</div>
+<!--{template common/footer_ajax}-->
